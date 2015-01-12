@@ -73,5 +73,5 @@ gitflow will automatically:
 * if your stages already have a "set :branch, 'my-staging-branch'" call in your configs, remove it. This workflow configures it automatically.
 
 == CREDIT
-
-Originally forked from Alan Pinstein's git_deployment repo. Gemified and hacked by Josh Nichols. There wasn't really a license originally, so...
+Release note task from @yetanothernguyen 
+Originally forked from Alan Pinstein's git_deployment repo. Gemified and hacked by Josh Nichols. 
