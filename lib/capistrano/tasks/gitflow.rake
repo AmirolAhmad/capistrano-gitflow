@@ -32,7 +32,7 @@ namespace :gitflow do
     "#{stage}-#{hwhen}-#{new_tag_serial}"
   end
 
-  def last_production_tag(second_last)
+  def last_production_tag(second_last=nil)
     last_tag_matching('production-*',second_last)
   end
 
@@ -190,13 +190,13 @@ git push origin #{local_branch}
 
       commits = `git log --pretty=format:"%h %s (%an)" #{second_last_tag}...#{last_tag}`
 
-      release_note = <<-TEXT
-                        Date: #{Time.now}
-                        Tag: #{last_tag}
+      release_note = <<-TEXT                        
+      Date: #{Time.now}
+      Tag: #{last_tag}
 
-                        Commits:
-                        #{commits}
-                        TEXT
+      Commits:
+      #{commits}
+      TEXT
 
       release_note.gsub!("\"","'")
       release_note.force_encoding("ASCII-8BIT")
